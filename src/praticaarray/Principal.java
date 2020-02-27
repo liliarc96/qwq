@@ -17,31 +17,18 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Produto produtos[] = new Produto[3];
-        
+        int n = 3;
+        Produto produtos[] = new Produto[n];
         Scanner entrada = new Scanner(System.in);
         
-        System.out.println("Nome, preço e valor do 1o produto: ");
-        String nome = entrada.next();
-        int quant_estoque = entrada.nextInt();
-        double valor = entrada.nextDouble();
-        Produto produto1 = new Produto(nome, quant_estoque, valor);
+        for(int i = 0;i < n;i++){
+            System.out.println("Nome, preço e valor do"+ (1 + i) +"º produto");
+            String nome = entrada.next();
+            int quant_estoque = entrada.nextInt();
+            double valor = entrada.nextDouble();
+            produtos[i] = new Produto(nome, quant_estoque, valor);
+        }
         
-        System.out.println("Nome, preço e valor do 2o produto: ");
-        nome = entrada.next();
-        quant_estoque = entrada.nextInt();
-        valor = entrada.nextDouble();
-        Produto produto2 = new Produto(nome, quant_estoque, valor);
-        
-        System.out.println("Nome, preço e valor do 3o produto: ");
-        nome = entrada.next();
-        quant_estoque = entrada.nextInt();
-        valor = entrada.nextDouble();
-        Produto produto3 = new Produto(nome, quant_estoque, valor);
-        
-        produtos[0] = produto1;
-        produtos[1] = produto2;
-        produtos[2] = produto3;
         
         System.out.println("Digite o ID do produto adquirido: ");
         int id = entrada.nextInt();
